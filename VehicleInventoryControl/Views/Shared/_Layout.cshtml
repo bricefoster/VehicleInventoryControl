@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html ng-app="umbrellaModule">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div ng-controller="commonNavigationController" ng-init="challenge()" ng-show="reveal" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class=" nav navbar-nav">                 
+                    <li ng-show="admin"><a href="/#/Admin">Admin</a></li>
+                    <li ng-show="driver"><a href="/#/Driver">Driver Home</a></li>
+                    <li ng-show ="duo"><a href="/#/Reservations">Reserve</a></li>
+                    <li ng-show="admin"><a href="/#/Drivers">Drivers</a></li>
+                    <li ng-show="admin"><a href="/#/Inventory">Add a Vehicle</a></li>
+                    <li ng-show="duo"><a href="/#/Directions">Get Directions</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li ng-show ="admin"><a href="/#/Registration">Register a Driver</a></li>
+                    <li ><a ng-click="logout()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div ng-view class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    <script src="~/Scripts/GoogleMaps.js"></script>
+    <div id="google-map-api"></div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/signalR")
+    @*<script src="signalr/hubs"></script>*@ @*ASP.NET has problems bundling this file; therefore do not bundle*@
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/Angular")
+    @Scripts.Render("~/bundles/JS")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

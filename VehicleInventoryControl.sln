@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleInventoryControl", "VehicleInventoryControl\VehicleInventoryControl.csproj", "{3EFE7708-F02E-418A-944A-A95F5905023F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{59EBAD2E-1CF9-45BC-8221-230DB4590754}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{3C034303-2EA7-4200-9284-188BEFF58C5D}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\VehicleInventoryControl-WAWS-dev.json = PublishScripts\Configurations\VehicleInventoryControl-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleInventoryControl.Data", "VehicleInventoryControl.Data\VehicleInventoryControl.Data.csproj", "{B66C1CDD-A9EC-497B-A10A-A63B0C8963BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleInventoryControl.Data.Model", "VehicleInventoryControl.Data.Model\VehicleInventoryControl.Data.Model.csproj", "{9E84B3C7-9A13-4F95-A3A1-509A8311B219}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs36
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = VehicleInventoryControl\\VehicleInventoryControl.csproj
+		SccProjectName1 = VehicleInventoryControl
+		SccLocalPath1 = VehicleInventoryControl
+		SccProjectUniqueName2 = VehicleInventoryControl.Data\\VehicleInventoryControl.Data.csproj
+		SccProjectName2 = VehicleInventoryControl.Data
+		SccLocalPath2 = VehicleInventoryControl.Data
+		SccProjectUniqueName3 = VehicleInventoryControl.Data.Model\\VehicleInventoryControl.Data.Model.csproj
+		SccProjectName3 = VehicleInventoryControl.Data.Model
+		SccLocalPath3 = VehicleInventoryControl.Data.Model
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EFE7708-F02E-418A-944A-A95F5905023F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EFE7708-F02E-418A-944A-A95F5905023F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EFE7708-F02E-418A-944A-A95F5905023F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EFE7708-F02E-418A-944A-A95F5905023F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B66C1CDD-A9EC-497B-A10A-A63B0C8963BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B66C1CDD-A9EC-497B-A10A-A63B0C8963BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B66C1CDD-A9EC-497B-A10A-A63B0C8963BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B66C1CDD-A9EC-497B-A10A-A63B0C8963BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E84B3C7-9A13-4F95-A3A1-509A8311B219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E84B3C7-9A13-4F95-A3A1-509A8311B219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E84B3C7-9A13-4F95-A3A1-509A8311B219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E84B3C7-9A13-4F95-A3A1-509A8311B219}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C034303-2EA7-4200-9284-188BEFF58C5D} = {59EBAD2E-1CF9-45BC-8221-230DB4590754}
+	EndGlobalSection
+EndGlobal

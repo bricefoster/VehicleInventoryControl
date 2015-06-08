@@ -1,0 +1,136 @@
+﻿<div ng-controller="registrationController" ng-init="challenge()" ng-show="load">
+    <style>
+        .set {
+            margin-top: 50px;
+        }
+        /*body {
+            background: #d6e2ea;
+        }*/
+    </style>
+    <div class="row" style="padding-bottom:20px">
+        <img src="http://txsaywhat.com/uploads/misc/DSHS_Logo_2.png" height="100" /><img src="http://upload.wikimedia.org/wikipedia/commons/f/f2/Dallas,_Texas_Skyline_2006.jpg" height="125" width="885" /><br />
+    </div>
+    <br />
+    <!--Remember to let AngularJS handle registration validation instead of HTML5. Therefore, include novalidate in the form tag-->
+    <form novalidate ng-submit="submitForm(register)" class="form-group" name="formRegister" ng-hide="reveal">
+        <fieldset>
+            <legend><span style="font-size:x-large; color: #c30000;">Register Your Information</span></legend>
+            <span ng-class="{'has-error': formRegister.inputUserName.$invalid}">
+                <label for="inputUserName">Employee Number:</label>
+                <input required ng-model="register.employeeNumber"
+                       id="inputEmployeeNumber" name="inputEmployeeNumber"
+                       autofocus class="form-control" placeholder="Enter the employee's number" />
+            </span><br />
+            <span ng-class="{'has-error': formRegister.inputFirstName.$invalid}">
+                <label for="inputFirstName">First Name:</label>
+                <input required ng-model="register.firstName"
+                       id="inputFirstName" name="inputFirstName"
+                       class="form-control" placeholder="Enter first name" />
+            </span><br />
+            <span ng-class="{'has-error': formRegister.inputLastName.$invalid}">
+                <label for="inputLastName">Last Name:</label>
+                <input required ng-model="register.lastName"
+                       id="inputLastName" name="inputLastName"
+                       class="form-control" placeholder="Enter last name" />
+            </span><br />
+            <span>
+                <label>System position:</label>
+                <br />
+                <select required ng-options="obj.text for obj in roles" ng-model="register.role"
+                        id="selectRole" name="selectRole"
+                        class="form-control"></select>
+            </span><br />
+            <!--The dates could be handled better-->
+            <span ng-class="{'has-error': formRegister.inputDLExpDate.$invalid}">
+                <label>Driver's Licence Expiration Date: </label>
+                <br />
+                <input ng-model="register.dLExpDate" type="date">
+            </span><br /><br />
+            <span ng-class="{'has-error': formRegister.inputDLExpDate.$invalid}">
+                <label>Insurance Expiration Date: </label>
+                <br />
+                <input ng-model="register.insExpDate" type="date">
+            </span><br /><br />
+
+            <span ng-class="{'has-error': formRegister.inputEmail.$invalid}">
+                <label for="inputEMail">Valid E-mail Address:</label>
+                <input required ng-model="register.email"
+                       id="inputEmail" name="inputEmail"
+                       class="form-control" placeholder="Enter a valid e-mail address" />
+            </span><br />
+            <span ng-class="{'has-error': formRegister.inputPassword.$invalid}">
+                <label for="inputPassword">Password:</label>
+                <input required ng-model="register.password"
+                       id="inputPassword" name="inputPassword" type="password"
+                       class="form-control" placeholder="Choose a password" />
+            </span><br />
+            <span ng-class="{'has-error': formRegister.inputPasswordConfirm.$invalid}">
+                <label for="inputPasswordConfirm">Confirm Password:</label>
+                <input required ng-model="register.passwordConfirm"
+                       id="inputPasswordConfirm" name="inputPasswordConfirm" type="password"
+                       class=" form-control" placeholder="Confirm password" />
+            </span><br />
+            <span>
+                <input type="submit" class="btn btn-info" value="Submit" />
+            </span>
+        </fieldset>
+    </form>
+    <div ng-show="reveal">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        <input ng-show="!isEditing" ng-click="remove(details)" type="button" class="btn btn-danger" value="Remove employee" />
+                        <input ng-show="!isEditing" ng-click="edit()" type="button" class="btn btn-info" value="Edit employee" />
+                        <input ng-show="isEditing" ng-click="save(candidate)" type="button" class="btn btn-info" value="Save changes" />
+                        <input ng-show="isEditing" ng-click="cancel()" type="button" class="btn btn-danger" value="Cancel" />
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Employee number</td>
+                    <td>
+                        <span ng-show="!isEditing" ng-bind="details.employeeNumber"></span>
+                        <input ng-show="isEditing" ng-model="candidate.employeeNumber">
+                    </td>
+                </tr>
+                <tr>
+                    <td>First name</td>
+                    <td>
+                        <span ng-show="!isEditing" ng-bind="details.firstName"></span>
+                        <input ng-show="isEditing" ng-model="candidate.firstName">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last name</td>
+                    <td>
+                        <span ng-show="!isEditing" ng-bind="details.lastName"></span>
+                        <input ng-show="isEditing" ng-model="candidate.lastName">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Driver's license expiration date</td>
+                    <td>
+                        <span ng-show="!isEditing" ng-bind="details.DLExpDate"></span>
+                        <input ng-show="isEditing" ng-model="candidate.DLExpDate" type="date">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Insurance expiration date</td>
+                    <td>
+                        <span ng-show="!isEditing" ng-bind="details.insExpDate"></span>
+                        <input ng-show="isEditing" ng-model="candidate.insExpDate" type="date">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <span ng-show="!isEditing" ng-bind="details.email"></span>
+                        <input ng-show="isEditing" ng-model="candidate.Email">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

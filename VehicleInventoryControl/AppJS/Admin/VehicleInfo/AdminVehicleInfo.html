@@ -1,0 +1,92 @@
+﻿<div ng-controller="adminVehicleInfoController" ng-init="challenge()">
+    <style>
+        .set {
+            margin-top: 50px;
+        }
+        /*body {
+            background: #d6e2ea;
+        }*/
+    </style>
+    <div class="row" style="padding-bottom: 20px">
+        <img src="http://txsaywhat.com/uploads/misc/DSHS_Logo_2.png" height="100" /><img src="http://upload.wikimedia.org/wikipedia/commons/f/f2/Dallas,_Texas_Skyline_2006.jpg" height="125" width="885" /><br />
+    </div>
+    <br />
+    <fieldset>
+        <legend><span style="font-size:x-large; color: #c30000;">Vehicle Details</span></legend>
+    </fieldset>
+    <!--<div class="col-md-4">
+        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSN3CJ2ptuwkBRc6szipabnheTJ8wtsCkZRtkBlqRJNjeC0K1JC" class="img-thumbnail">
+    </div>-->
+    <div>
+        <div>
+            <h4>License Plate:</h4><div ng-bind="trucks.licPlate"></div>
+            <h4>Make:</h4><div ng-bind="trucks.make"></div>
+            <h4>Model:</h4><div ng-bind="trucks.model"></div>
+            <h4>Year:</h4><div ng-bind="trucks.year"></div>
+            <h4>Mileage:</h4><div ng-bind="trucks.totalMiles"></div>
+            <h4>Mileage for this month:</h4><div ng-bind="trucks.totalMilesForMonth"></div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th><h3>List of check in reports</h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="vm in trucks.checkInCascade" id={{vm.checkInId}}>
+                    <td>
+                        <table class="table-condensed">
+                            <tbody ng-cloak>
+                                <tr>
+                                    <td>Employee number</td>
+                                    <td ng-bind="vm.employeeNumber"></td>
+                                </tr>
+                                <tr>
+                                    <td>Destination</td>
+                                    <td ng-bind="vm.destination"></td>
+                                </tr>
+                                <tr>
+                                    <td>Number of passengers</td>
+                                    <td ng-bind="vm.numberOfPassengers"></td>
+                                </tr>
+                                <tr>
+                                    <td>Gallons of gas</td>
+                                    <td ng-bind="vm.gallons"></td>
+                                </tr>
+                                <tr>
+                                    <td>Overall gas cost</td>
+                                    <td ng-bind="vm.cost"></td>
+                                </tr>
+                                <tr>
+                                    <td>Ending mileage</td>
+                                    <td ng-bind="vm.endingMileage"></td>
+                                </tr>
+                                <tr>
+                                    <td>Date start</td>
+                                    <td>{{ vm.dateStart | date : mm/dd/yyy}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Date end</td>
+                                    <td>{{ vm.dateEnd | date : mm/dd/yyy}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Date reserved</td>
+                                    <td>{{ vm.dateReserved | date : mm/dd/yyy}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Date checked in</td>
+                                    <td>{{ vm.dateStampEnd | date : mm/dd/yyy}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Comments</td>
+                                    <td ng-bind="vm.comments"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

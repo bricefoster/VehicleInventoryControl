@@ -1,0 +1,58 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Custom CSS by cb*/
+.cb-space{
+    margin: 5px;
+}
+
+.cb-tr-full{
+    width: 100%;
+}
+
+.cb-block{
+    display: block;
+    margin: 3px;
+}
+
+.cb-block-left{
+    display: block;
+    float: left;
+}
+.cb-block-right{
+    display: block;
+    float: right;
+}
+
+.g-map {
+    background-color:#E6E6FA;
+}
+
+a{
+    cursor: pointer;
+}
+/* End custom CSS by cb */
+#GoogleMapsView {
+    height: 100%;
+    width: 100%;
+}
+.container {
+    height: 100%;
+}

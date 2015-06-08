@@ -1,0 +1,71 @@
+﻿<div ng-controller="driverHomeController" ng-init="challenge()">
+
+    <style>
+        .set {
+            margin-top: 50px;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        /*body {
+            background: #d6e2ea;
+        }*/
+    </style>
+
+    <div class="row" style="padding-bottom: 20px">
+        <img src="http://txsaywhat.com/uploads/misc/DSHS_Logo_2.png" height="100" /><img src="http://upload.wikimedia.org/wikipedia/commons/f/f2/Dallas,_Texas_Skyline_2006.jpg" height="125" width="885" /><br />
+    </div>
+    <br />
+
+    <!--<div class="well">
+                <h3>
+                    StartDate: <input type="date">
+        EndDate: <input type="date"><br />
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </h3>
+     </div>-->
+
+    <fieldset>
+        <legend><span style="font-size:x-large; color: #c30000;">Driver Home Page</span></legend>
+    </fieldset>
+
+
+    <table id="tableDriverHome" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th><h4>Licence Plate Number</h4></th>
+                <th><h4>Make</h4></th>
+                <th><h4>Model</h4></th>
+                <th><h4>Year</h4></th>
+                <th><h4>Reservation dates</h4></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="vehicle in driver_Vehicles.vehicleDriverCascade" id={{vehicle.vehicleId}}>
+                <td ng-bind="vehicle.licPlate"></td>
+                <td ng-bind="vehicle.make"></td>
+                <td ng-bind="vehicle.model">></td>
+                <td ng-bind="vehicle.year"></td>
+                <td>
+                    <table id={{vehicle.licPlate}} class="table table-striped">
+                        <tbody id="tbodyReservations">
+                            <tr ng-cloak ng-repeat="date in vehicle.reservationsDates | orderBy:'dateStart'">
+                                <td>{{ date.dateStart | date : mm/dd/yyy}} - {{date.dateEnd | date : mm/dd/yyy}}</td>
+                                <td>
+                                    <input ng-show="date.isActive" ng-click="checkIn(date)" value="Check In" type="button" class="btn btn-info" />
+                                    <input ng-show="!date.isActive" ng-click="cancel(date, $index)" value="Cancel" type="button" class="btn btn-danger" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

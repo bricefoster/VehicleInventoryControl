@@ -1,0 +1,47 @@
+﻿<head>
+    <title></title>
+    <!-- Custom CSS -->
+    <link href="css/full-slider.css" rel="stylesheet">
+</head>
+<div ng-controller="ECPLoginController" data-ng-init="Challenge()" class="row">
+    <style>
+        .set {
+            margin-top: 50px;
+        }
+
+        .well {
+            width: 350px;
+            height: 340px;
+            padding-top: 30px;
+            text-align: center;
+            margin: auto;
+            margin-top: 150px;
+            border: 2px solid gray;
+            border-radius: 5px;
+        }
+
+        .CommentBox > div {
+            margin: 0 auto;
+            width: 250px;
+        }
+
+        body {
+            background: url(http://upload.wikimedia.org/wikipedia/commons/4/44/Panoramic_Houston_skyline.jpg) no-repeat center center fixed;
+        }
+    </style>
+    
+    <!--<div class="row" style="padding-bottom: 40px">
+        <img src="http://txsaywhat.com/uploads/misc/DSHS_Logo_2.png" height="100" /><img src="http://upload.wikimedia.org/wikipedia/commons/f/f2/Dallas,_Texas_Skyline_2006.jpg" height="125" width="885" /><br />
+    </div>-->
+
+    <div class="well">
+        <div class="CommentBox">
+            <div>
+                <img src="http://txsaywhat.com/uploads/misc/DSHS_Logo_2.png" height="100" /><br /><br />
+                <input ng-model="user.username" class="form-control" placeholder="Enter username" /><br />
+                <input type="password" ng-model="user.password" class="form-control" placeholder="Enter password" /><br />
+                <input ng-click="Login()" type="button" class="btn btn-info" value="Login" />
+            </div>
+        </div>
+    </div>
+</div>

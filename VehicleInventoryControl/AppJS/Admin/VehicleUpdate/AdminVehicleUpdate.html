@@ -1,0 +1,54 @@
+﻿<div ng-controller="adminVehicleUpdateController">
+    <style>
+        .set {
+            margin-top: 50px;
+        }
+        /*body {
+            background: #d6e2ea;
+        }*/
+    </style>
+    <div class="row" style="padding-bottom: 20px">
+        <img src="http://txsaywhat.com/uploads/misc/DSHS_Logo_2.png" height="100" /><img src="http://upload.wikimedia.org/wikipedia/commons/f/f2/Dallas,_Texas_Skyline_2006.jpg" height="125" width="885" /><br />
+    </div>
+    <br />
+    <fieldset>
+        <legend><span style="font-size:x-large; color: #c30000;">Add a Vehicle</span></legend>
+    </fieldset>
+    <form novalidate ng-submit="post(automobile)" class="form-group" name="formUpdate">
+        <fieldset>
+            <span>
+                <label for="inputLicPlate">License plate number:</label>
+                <input required ng-model="automobile.licPlate"
+                       id="inputLicPlate" name="inputLicPlate"
+                       autofocus class="form-control" placeholder="Enter the license plate number" />
+            </span><br />
+            <span>
+                <label for="inputMake">Make:</label>
+                <input required ng-model="automobile.make"
+                       id="inputMake" name="inputMake"
+                       class="form-control" placeholder="Enter the vehicle make" />
+            </span><br />
+            <span>
+                <label for="inputModel">Model:</label>
+                <input required ng-model="automobile.model"
+                       id="inputModel" name="inputModel"
+                       class="form-control" placeholder="Enter the vehicle model" />
+            </span><br />
+            <span>
+                <label for="inputYear">Year:</label>
+                <input required ng-model="automobile.year"
+                       id="inputYear" name="inputYear"
+                       class="form-control" placeholder="Year of manufacture" />
+            </span><br />
+            <span>
+                <label for="inputMiles">Initial miles:</label>
+                <input required ng-model="automobile.miles"
+                       id="inputMiles" name="inputMiles"
+                       class="form-control" placeholder="Miles on odometer">
+            </span><br />
+        </fieldset>
+        <span>
+            <input type="submit" class="btn btn-info" value="Submit" />
+        </span>
+    </form>
+</div>

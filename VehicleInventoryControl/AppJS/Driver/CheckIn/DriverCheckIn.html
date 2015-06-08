@@ -1,0 +1,61 @@
+﻿<div ng-controller="driverCheckInController" ng-init="challenge()">
+    <style>
+        .set {
+            margin-top: 50px;
+        }
+        /*body {
+            background: #d6e2ea;
+        }*/
+    </style>
+    <div class="row" style="padding-bottom: 20px">
+        <img src="http://txsaywhat.com/uploads/misc/DSHS_Logo_2.png" height="100" /><img src="http://upload.wikimedia.org/wikipedia/commons/f/f2/Dallas,_Texas_Skyline_2006.jpg" height="125" width="885" /><br />
+    </div>
+    <br />
+    <form novalidate ng-submit="submitForm(checkIn)" class="form-group" name="formCheckIn">
+        <fieldset>
+            <legend><span style="font-size:x-large; color: #c30000;">Vehicle Check In</span></legend>
+            <span ng-class="{'has-error': formCheckIn.inputEndingMileage.$invalid}">
+                <label for="inputEndingMileage">Ending Mileage:</label>
+                <input required ng-model="checkIn.endingMileage"
+                       id="inputEndingMileage" name="inputEndingMileage"
+                       class="form-control" placeholder="Enter Ending Mileage" />
+            </span><br />
+
+            <span ng-class="{'has-error': formCheckIn.inputDestination.$invalid}">
+                <label for="inputDestination">Destination:</label>
+                <input required ng-model="checkIn.destination"
+                       id="inputDestination" name="inputDestination"
+                       class="form-control" placeholder="Destination" />
+            </span><br />
+
+            <span ng-class="{'has-error': formCheckIn.inputPassengers.$invalid}">
+                <label>Number of Passengers: </label>
+                <input required ng-model="checkIn.numberOfPassengers"
+                       id="inputPassengers" name="inputPassengers"
+                       class="form-control" placeholder="Number of passengers" />
+            </span><br />
+
+            <span ng-class="{'has-error': formCheckIn.inputGallons.$invalid}">
+                <label for="inputGallons">Gallons:</label>
+                <input required ng-model="checkIn.gallons"
+                       id="inputGallons" name="inputGallons"
+                       class="form-control" placeholder="Number of Gallons" />
+            </span><br />
+
+            <span ng-class="{'has-error': formCheckIn.inputCost.$invalid}">
+                <label for="inputCost">Cost:</label>
+                <input required ng-model="checkIn.cost"
+                       id="inputCost" name="inputCost"
+                       class="form-control" placeholder="Total Cost" />
+            </span><br />
+
+            <span ng-class="{'has-error': formCheckIn.inputPurpose.$invalid}">
+                <label for="inputPurpose">Comments:</label>
+                <textarea required ng-model="checkIn.Comments" id="inputPurpose" name="inputPurpose" class="form-control" placeholder="Comments"></textarea>
+            </span><br />
+            <span>
+                <input type="submit" class="btn btn-info" value="Submit" />
+            </span>
+        </fieldset>
+    </form>
+</div>       

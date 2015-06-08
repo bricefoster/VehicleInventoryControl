@@ -1,0 +1,63 @@
+﻿<div ng-controller="driverSearchController" ng-init="challenge()">
+<style>
+    .set {
+    margin-top: 50px;
+    }
+    th {
+        text-align:center;
+    }
+    td {
+        text-align:center;
+    }
+    /*body {
+            background: #d6e2ea;
+        }*/
+</style>
+    <div class="row" style="padding-bottom: 20px">
+        <img src="http://txsaywhat.com/uploads/misc/DSHS_Logo_2.png" height="100" /><img src="http://upload.wikimedia.org/wikipedia/commons/f/f2/Dallas,_Texas_Skyline_2006.jpg" height="125" width="885" /><br />
+    </div>
+    <br />
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <div class="well" style="text-align:center; height:125px; width:1115px;" >
+                        <h3>
+                            Start Date: <input ng-model="search.dateStart" type="date">&nbsp;&nbsp;
+                            End Date: <input ng-model="search.dateEnd" type="date">
+                            <input type="submit" class="btn btn-info" ng-click="retrieve(search)" value="Submit" />
+                        </h3>
+                    </div>
+                    <fieldset>
+                        <legend><span style="font-size:x-large; color: #c30000">Reserve a Vehicle</span></legend>
+                        <div class="row clearfix">
+                            <div class="col-md-12 column">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th><h4>Licence Plate Number</h4></th>
+                                            <th><h4>Make</h4></th>
+                                            <th><h4>Model</h4></th>
+                                            <th><h4>Year</h4></th>
+                                            <th><h4>Confirm</h4></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="vehicle in driver_Vehicles">
+                                        <td ng-bind="vehicle.licPlate"><h5></h5></td>
+                                        <td ng-bind="vehicle.make"><h5></h5></td>
+                                        <td ng-bind="vehicle.model"><h5></h5></td>
+                                        <td ng-bind="vehicle.year"><h5></h5></td>
+                                        <td>
+                                            <input ng-show="!vehicle.isReserved" ng-click="reserve(vehicle)" type="button" value="Reserve" class="btn btn-info" />
+                                            <input ng-show="vehicle.isReserved" ng-click="cancel(vehicle)" type="button" value="Cancel" class="btn btn-danger"/>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </fieldset>
+                  </div>
+            </div>
+        </div>
+ </div>

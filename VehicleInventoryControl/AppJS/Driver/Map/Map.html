@@ -1,0 +1,79 @@
+﻿<div ng-controller="mapController" ng-init="loadScript()" id="GoogleMapsView">
+    <div class="row" style="padding-bottom: 20px">
+        <img src="http://txsaywhat.com/uploads/misc/DSHS_Logo_2.png" height="100" /><img src="http://upload.wikimedia.org/wikipedia/commons/f/f2/Dallas,_Texas_Skyline_2006.jpg" height="125" width="885" /><!--style="border: 3px solid #d1e2f5"--><br />
+    </div>
+    <br />
+    <div id="mapDiv"></div>
+
+    <br />
+    <div class="container">
+        <div class="row clearfix">
+            <style type="text/css">
+                html, body {
+                    height: 100%;
+                    margin: 25px;
+                    padding: 0;
+                    /*width: 100%;*/
+                }
+
+                #mapDiv {
+                    height: 50%;
+                    width: 100%;
+                    border: 3px solid #d6def6;
+                    border-radius: 5px;
+                }
+
+                h5 {
+                    color: black;
+                }
+
+                .fieldset {
+                    color: #201c87;
+                }
+
+                 /*li {
+                    font-size: 200%;
+                }*/
+            </style>
+            <div>
+                <input id="address" type="text" value="Houston, Texas" style="width:300px;" />
+                <input type="button" class="btn btn-sm btn-info" value="Plot a Destination" onclick="Google.geocodeAddress()" /><br /><br/>
+                <!--<input id="customStartLocation" type="textbox" value="" style="width:300px;" />-->
+                <input id="location" type="text" value="" style="width:300px;" />
+                <input type="button" class="btn btn-sm btn-success" value="Get Directions" onclick="Google.calcRoute()" />
+                <div id="directionsPanel" style="float:right;width:30%;height: 100%">
+                </div>
+            </div><br />
+            <button class="btn btn-sm btn-default" id="btnRoadmap">Show Roadmap</button>
+            <button class="btn btn-sm btn-default" id="btnTerrain">Show Terrain</button>
+            <button class="btn btn-sm btn-default" id="btnSatellite">Satellite View</button>
+            <button class="btn btn-sm btn-default" id="btnHybrid">Hybrid View</button><br /><br/>
+            <fieldset class="fieldset">
+                <legend><span style="font-size:x-large; color: #c30000;">Steps</span></legend>
+                <ul>
+                    <li>
+                        <h5> Did you remember to <a href="/#/CheckIn">check in</a> your Vehicle Ending Mileage and Destination?</h5>
+                    </li>
+                    <li>
+                        <h5>  Did you remember to <a href="/#/CheckIn">log</a> the number of Gallons and the Price Per Gallon for this reservation?</h5>
+                    </li>
+                    <li>
+                        <h5>  Did you remember to <a href="/#/Reservations">mark</a> this Vehicle as "Reserved" and fill out the "Date Reserved", "Date Reserved - Start", and "Date Reserved - End" fields?</h5>
+                    </li>
+                    <li>
+                        <h5> Is your Driver's License expired?  Have you <a href="/#/Driver">logged</a> your driver's license expiration date?</h5>
+                    </li>
+                    <li>
+                        <h5> Is your Driver's Insurance expired?  Have you <a href="/#/Driver">logged</a> your Driver's Insurance Expiration Date?</h5>
+                    </li>
+                    <li>
+                        <h5> Don't forget to check the tires, check the Vehicle's fluid levels (Oil, Transmission Fluid, Coolant, etc).  Inspect the Windshield, Windows and<br /> Mirrors for any cracks or chips.  <a href="/#/CheckIn">Report</a> any of these conditions to Administration before departure or <strong>you will be held responsible</strong>.</h5>
+                    </li>
+                    <li>
+                        <h5> Buckle up, drive responsibly.  Have a safe trip!</h5>
+                    </li>
+                </ul>
+            </fieldset>
+        </div>
+    </div>
+</div>

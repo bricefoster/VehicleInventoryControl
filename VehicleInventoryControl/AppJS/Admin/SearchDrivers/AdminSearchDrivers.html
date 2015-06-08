@@ -1,0 +1,41 @@
+﻿<div ng-controller="adminSearchDriversController" ng-init="challenge()" ng-show="reveal">
+    <style>
+        .set {
+            margin-top: 50px;
+        }
+        th {
+            text-align: center;
+        }
+        td {
+            text-align: center;
+        }
+        /*body {
+            background: #d6e2ea;
+        }*/
+    </style>
+    <div class="row" style="padding-bottom: 20px">
+        <img src="http://txsaywhat.com/uploads/misc/DSHS_Logo_2.png" height="100" /><img src="http://upload.wikimedia.org/wikipedia/commons/f/f2/Dallas,_Texas_Skyline_2006.jpg" height="125" width="885" /><br />
+    </div>
+    <br />
+    <fieldset>
+        <legend><span style="font-size:x-large; color: #c30000;">Drivers</span></legend>
+    </fieldset>
+    <table class="table table-responsive table-bordered table-striped">
+        <thead>
+            <tr>
+                <th><h4>Employee number</h4></th>
+                <th><h4>First name</h4></th>
+                <th><h4>Last name</h4></th>
+                <th><h4>Details</h4></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="driver in drivers.driverSearchCascade">
+                <td ng-bind="driver.employeeNumber"><h5></h5></td>
+                <td ng-bind="driver.firstName"><h5></h5></td>
+                <td ng-bind="driver.lastName"><h5></h5></td>
+                <td><input type="button" ng-click="details(driver)" class="btn btn-info" value="Details"/></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
